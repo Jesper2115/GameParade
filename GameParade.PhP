@@ -1,9 +1,12 @@
 <?php
-
+    include("db.php");
+    $sql = 'SELECT title, phydig, reldate, completion, comdate, genre, developer, publisher, platform, digplatform FROM gameparade LIMIT 50';
+    
+    $resultat = mysqli_query($conn, $sql);
 
 ?>
 <!DOCTYPE html>
-<html lang="da">
+<html lang="en">
 
 <head>
 	<meta charset="utf-8">
@@ -13,31 +16,33 @@
 </head>
 
 <body>
-	<form name="game_form" method="post" action="behandl_observation.php">
+	<form name="game_form" method="post" action="do.php">
+		<fieldset>
 		<label>Title:</label><br>
-		<textarea id="title" name="title"></textarea><br>
+		<input type="text" id="title" name="title"><br>
 		<label>Physical/digital:</label><br>
 			<select id="phydig" name="phydig">
              	<option value="Physical">Physically</option>
                 <option value="Digital">Digitally</option>
             </select><br>
 		<label>Release date:</label><br>
-		<textarea id="obsTekst" name="obsTekst"></textarea><br>
+		<input type="text" id="reldate" name="reldate"><br>
 		<label>Completion:</label><br>
 			<select id="completion" name="completion">
 				<option value="Yes">Yes</option>
 				<option value="No">No</option>
 			</select><br>
 		<label>Completion date:</label><br>
-		<textarea id="comdate" name="comdate"></textarea><br>
+		<input type="text" id="comdate" name="comdate"><br>
 		<label>Genre:</label><br>
-		<textarea id="genre" name="genre"></textarea><br>
+		<input type="text" id="genre" name="genre"><br>
 		<label>Developer:</label><br>
-		<textarea id="developer" name="developer"></textarea><br>
+		<input type="text" id="developer" name="developer"><br>
 		<label>Publisher:</label><br>
-		<textarea id="publisher" name="publisher"></textarea><br>
+		<input type="text" id="publisher" name="publisher"><br>
 		<label>Platform:</label><br>
 			<select id="platform" name="platform">
+				<option value=""></option>
 				<option value="pc">PC</option>
 				<option value="ps4">PlayStation 4</option>
 				<option value="xb1">Xbox One</option>
@@ -51,8 +56,26 @@
 				<option value="ps2">PlayStation 2</option>
 			</select><br>
 		<label>Digital platfom:</label><br>
-
+			<select id="digplatform" name="digplatform">
+				<option value=""></option>
+				<option value="Steam">Steam</option>
+				<option value="Origin">Origin</option>
+				<option value="UPlay">UPlay</option>
+				<option value="MicrosoftStore">Microsoft Store</option>
+				<option value="PlayStationStore">PlayStation Store</option>
+				<option value="Battlenet">Battle.net</option>
+				<option value="AppStore">App Store (Mac)</option>
+			</select><br>
+			<button type="submit" value="submit">Gem</button>
+		</fieldset>
 	</form>
+		
+            <section id="observationer">
+                <?php while ($r = mysqli_fetch_array($resultat)) { 
+                            echo '<section class=""><h3>' . $r['title'] . '</h3><p>' . $r['phydig'] . '</p></section>';
+                        } 
+                 ?>
+        	</section>
 </body>
 
 </html>
