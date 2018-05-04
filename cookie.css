@@ -1,0 +1,48 @@
+#cookie {
+	position: sticky;
+	display: block;
+}
+
+#cookie-bar.fixed {
+	bottom: 5;
+	left: 0;
+	z-index: 100;
+}
+
+#cookie-bar {
+	line-height: 24px;
+	color: #eeeeee;
+	text-align: center;
+	padding: 3px 0;
+	width: 100%;
+	color: white;
+	background-color: #444;
+	display: none;
+}
+
+.cb-enable {
+	border-radius: 10%;
+	margin-left: 100px;
+	color: white;
+	padding: 5px;
+	border-radius: 10%;
+	font-family: serif;
+	text-decoration: none;
+	transition: .3s background-color;
+
+
+
+}
+
+.cb-enable:hover {
+	background-color: darkcyan;
+}
+
+.cb-policy {
+	color: white;
+	text-decoration: underline;
+}
+
+.cb-policy:hover {
+	color: darkcyan;
+}
