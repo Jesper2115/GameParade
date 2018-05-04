@@ -8,7 +8,9 @@ body {
 }
 
 form {
+    margin: auto;
    font-size: 2em;
+    width: 100%;
 }
 
 #list {
@@ -21,6 +23,7 @@ label {
 
 .games {
     background-color: #708DA3;
+    margin: auto;
     margin-top: 10px;
     margin-bottom: 10px;
     padding: 13px;
@@ -43,7 +46,6 @@ fieldset {
     background-color: #708DA3;
     border-radius: 30px;
     border: solid;
-    width: 600px;
 }
 
 button {
@@ -99,7 +101,7 @@ label {
     border-radius: 30px;
     border: solid;
     font-size: 1.3em;
-    width: 600px;
+    width: 30.8em;
     
 
 }
@@ -118,6 +120,7 @@ fieldset {
     background-color: #708DA3;
     border-radius: 30px;
     border: solid;
+    width: 40em;
 }
 
 button {
