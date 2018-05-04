@@ -4,7 +4,7 @@ body {
 }
 
 .game {
-    font-size: 1.3em;
+    font-size: 1.5em;
 
 }
 
@@ -12,8 +12,12 @@ form {
    font-size: 2em;
 }
 
+#list {
+    
+}
+
 label {
-    font-size: 1.3em;
+    font-size: 0.6em;
 }
 
 .games {
@@ -23,7 +27,7 @@ label {
     padding: 13px;
     border-radius: 30px;
     border: solid;
-    font-size: 2.3em;
+    font-size: 1.3em;
 
 }
 
@@ -31,7 +35,7 @@ input, #platform, #digplatform, #completion, #phydig {
     border-radius: 20px;
     margin-bottom: 1.3em;
     margin-top: 0.2em;
-    font-size: 1.2em;
+    font-size: 0.6em;
     
     
 }
@@ -45,25 +49,25 @@ fieldset {
 button {
     margin-top: 25px;
     border-radius: 20px;
-    font-size: 1em;
-    height: 2em;
-    width: 6em;
+    font-size: 0.6em;
+    height: 1.8em;
+    width: 6.4em;
 }
     
-    h1 {
+h1 {
     text-align: center;
     font-style: italic;
-    font-size: 6em;
+    font-size: 2.8em;
     color: #00a2e8;
-    
 }
 
 @media screen and (min-width: 480px) {
-    h1 {
+h1 {
     text-align: center;
     font-style: italic;
     font-size: 6em;
     color: #00a2e8;
+    text-align: center;
     
 }
 
