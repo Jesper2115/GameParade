@@ -14,13 +14,13 @@
 	<script type="text/javascript" src="script.js"></script>
 	<link rel="stylesheet" href="cookie.css">
 	<link rel="stylesheet" href="style.css">
-
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
        	
 	<div id="cookie-bar" class="fixed">
-    <p>This website uses cookies to ensure the best expirience.
+    <p>This website uses cookies to ensure the best experience.
         <a href="#" id="save-cookie-example"class="cb-enable">I understand.</a>
         <a href="https://cookiesandyou.com/" class="cb-policy">Learn more.</a>
     </p>
@@ -79,7 +79,7 @@
 				<option value=" - Battle.net">Battle.net</option>
 				<option value=" - App Store (Mac)">App Store (Mac)</option>
 			</select><br>
-			<button type="submit" value="submit">Save</button>
+			<button type="submit" value="submit">Submit</button>
 		</fieldset>
 	</form>
 		
