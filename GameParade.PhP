@@ -11,17 +11,29 @@
 <head>
 	<meta charset="utf-8">
 	<title>Game Parade</title>
+	<script type="text/javascript" src="script.js"></script>
+	<link rel="stylesheet" href="cookie.css">
 	<link rel="stylesheet" href="style.css">
 
 </head>
 
 <body>
+       	
+	<div id="cookie-bar" class="fixed">
+    <p>This website uses cookies to ensure the best expirience.
+        <a href="#" id="save-cookie-example"class="cb-enable">I understand.</a>
+        <a href="https://cookiesandyou.com/" class="cb-policy">Learn more.</a>
+    </p>
+	</div>
+	
+	<h1>GameParade</h1>
 	<form name="game_form" method="post" action="do.php">
 		<fieldset>
 		<label>Title:</label><br>
 		<input type="text" id="title" name="title" required><br>
 		<label>Form of copy:</label><br>
-			<select id="phydig" name="phydig">
+			<select id="phydig" name="phydig" required>
+            	<option value=""></option>
              	<option value="Physical">Physical</option>
                 <option value="Digital">Digital</option>
             </select><br>
@@ -63,28 +75,20 @@
 				<option value=" - Origin">Origin</option>
 				<option value=" - UPlay">UPlay</option>
 				<option value=" - Microsoft Store">Microsoft Store</option>
-				<option value=" - PlayStationStore">PlayStation Store</option>
-				<option value=" - Battlenet">Battle.net</option>
-				<option value=" - AppStore">App Store (Mac)</option>
+				<option value=" - PlayStation Store">PlayStation Store</option>
+				<option value=" - Battle.net">Battle.net</option>
+				<option value=" - App Store (Mac)">App Store (Mac)</option>
 			</select><br>
 			<button type="submit" value="submit">Save</button>
 		</fieldset>
 	</form>
 		
-            <section id="observationer">
+            <section id="list">
                 <?php while ($r = mysqli_fetch_array($resultat)) { 
-                            echo '<section class=""><span class="game">' . $r['title'] . '</span> ' . '(' . $r['platform'] . $r['digplatform'] . ') (' . $r['phydig'] . ')</p>' . $r['completion'] . ' ' . $r['comdate'] . '<br>Genre: ' . $r['genre'] .'<br> Developer: '. $r['developer'] . '<br>Publisher: ' . $r['publisher'] . '</section>';
+                            echo '<section class="games"><span class="game">' . $r['title'] . '</span> ' . '(' . $r['platform'] . $r['digplatform'] . ') (' . $r['phydig'] . ')</p>' . $r['completion'] . ' ' . $r['comdate'] . '<br>Genre: ' . $r['genre'] .'<br> Developer: '. $r['developer'] . '<br>Publisher: ' . $r['publisher'] . '</section>';
                         } 
                  ?>
         	</section>
 </body>
-
-<script>
-    if (document.game_form.title.value == "") {
-        visfejltekst('Whacha game, bra?');
-    document.game_form.title.focus();
-        return false;
-    }
-    </script>
 
 </html>
