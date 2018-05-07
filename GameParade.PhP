@@ -1,8 +1,8 @@
 <?php
-    include("db.php");
-    $sql = 'SELECT title, phydig, reldate, completion, comdate, genre, developer, publisher, platform, digplatform FROM gameparade LIMIT 50'; 
+    include("db.php"); //Inkluderer db.php, som har login-oplysningerne til databasen.
+    $sql = 'SELECT title, phydig, reldate, completion, comdate, genre, developer, publisher, platform, digplatform FROM gameparade LIMIT 50'; //Vælger kolonner fra tabellen gameparade i databasen.
     
-    $resultat = mysqli_query($conn, $sql);
+    $resultat = mysqli_query($conn, $sql); //Den lægger værdier i $resultat
 
 ?>
 <!DOCTYPE html>
@@ -11,24 +11,24 @@
 <head>
 	<meta charset="utf-8">
 	<title>Game Parade</title>
-	<script type="text/javascript" src="script.js"></script>
-	<link rel="stylesheet" href="cookie.css">
-	<link rel="stylesheet" href="style.css">
+	<script type="text/javascript" src="script.js"></script> <!-- script.js har javascript-koden til cookie-popup'en -->
+	<link rel="stylesheet" href="cookie.css"> <!-- Style sheet'et til cookie-popup'en -->
+	<link rel="stylesheet" href="style.css"> <!-- Stylesheet til resten af siden -->
 	<link rel="icon" href="favicon.ico" type="image/x-icon"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
 <body>
        	
-	<div id="cookie-bar" class="fixed">
+	<div id="cookie-bar" class="fixed"> 
     <p>This website uses cookies to ensure the best experience.
-        <a href="#" id="save-cookie-example"class="cb-enable">I understand.</a>
-        <a href="https://cookiesandyou.com/" class="cb-policy">Learn more.</a>
+        <a href="#" id="save-cookie-example" class="cb-enable">I understand.</a> <!-- En knap der lukker cookie popup'en -->
+        <a href="https://cookiesandyou.com/" class="cb-policy">Learn more.</a> <!-- Fører brugeren videre til en side hvor de kan læse om cookies -->
     </p>
 	</div>
 	
 	<h1>GameParade</h1>
-	<form name="game_form" method="post" action="do.php">
+	<form name="game_form" method="post" action="do.php"> <!-- do.php har alle variablerne der hører til felterne -->
 		<fieldset>
 		<label>Title:</label><br>
 		<input type="text" id="title" name="title" required><br>
@@ -80,12 +80,12 @@
 				<option value=" - Battle.net">Battle.net</option>
 				<option value=" - App Store (Mac)">App Store (Mac)</option>
 			</select><br>
-			<button type="submit" value="submit">Submit</button>
+			<button type="submit" value="submit">Submit</button> <!-- En knap med værdien submit, som tilføjer dataer til tabellen -->
 		</fieldset>
 	</form>
 		
             <section id="list">
-                <?php while ($r = mysqli_fetch_array($resultat)) { 
+                <?php while ($r = mysqli_fetch_array($resultat)) { //En while-lækker der arbejder med $resultat 
                             echo '<section class="games"><span class="game">' . $r['title'] . '</span> ' . '(' . $r['platform'] . $r['digplatform'] . ') (' . $r['phydig'] . ')</p>' . 'Release date: ' . $r['reldate'] . '<br>' . $r['completion'] . ' ' . $r['comdate'] . '<br>Genre: ' . $r['genre'] .'<br> Developer: '. $r['developer'] . '<br>Publisher: ' . $r['publisher'] . '</section>';
                         } 
                  ?>
