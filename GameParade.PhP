@@ -1,6 +1,6 @@
 <?php
     include("db.php");
-    $sql = 'SELECT title, phydig, reldate, completion, comdate, genre, developer, publisher, platform, digplatform FROM gameparade LIMIT 50';
+    $sql = 'SELECT title, phydig, reldate, completion, comdate, genre, developer, publisher, platform, digplatform FROM gameparade LIMIT 50'; 
     
     $resultat = mysqli_query($conn, $sql);
 
@@ -14,6 +14,7 @@
 	<script type="text/javascript" src="script.js"></script>
 	<link rel="stylesheet" href="cookie.css">
 	<link rel="stylesheet" href="style.css">
+	<link rel="icon" href="favicon.ico" type="image/x-icon"/>
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 </head>
 
@@ -85,7 +86,7 @@
 		
             <section id="list">
                 <?php while ($r = mysqli_fetch_array($resultat)) { 
-                            echo '<section class="games"><span class="game">' . $r['title'] . '</span> ' . '(' . $r['platform'] . $r['digplatform'] . ') (' . $r['phydig'] . ')</p>' . $r['completion'] . ' ' . $r['comdate'] . '<br>Genre: ' . $r['genre'] .'<br> Developer: '. $r['developer'] . '<br>Publisher: ' . $r['publisher'] . '</section>';
+                            echo '<section class="games"><span class="game">' . $r['title'] . '</span> ' . '(' . $r['platform'] . $r['digplatform'] . ') (' . $r['phydig'] . ')</p>' . 'Release date: ' . $r['reldate'] . '<br>' . $r['completion'] . ' ' . $r['comdate'] . '<br>Genre: ' . $r['genre'] .'<br> Developer: '. $r['developer'] . '<br>Publisher: ' . $r['publisher'] . '</section>';
                         } 
                  ?>
         	</section>
