@@ -1,3 +1,4 @@
+/*definerer baggrundsbilledet på siden*/
 body {
     background-color: #414141;
 	background-image: url(pc_background.png);
@@ -6,6 +7,7 @@ body {
 }
 
 .game {
+    /*angiver størrelsen på spillets titel*/
     font-size: 1.5em;
 
 }
@@ -13,7 +15,7 @@ body {
 form {
     margin: auto;
    font-size: 2em;
-    width: 100%;
+    width: 100%; /*definerer bredden på boksen*/
 }
 
 #list {
@@ -21,10 +23,12 @@ form {
 }
 
 label {
+    /* angiver størrelsen på form labels */
     font-size: 0.6em;
 }
 
 .games {
+    /* definerer dimensioner, farver, font størrelse, samt andre detaljer for alle boksene der indeholder information om de individuelle spil. */
     background-color: #708DA3;
     margin: auto;
     margin-top: 10px;
@@ -37,6 +41,7 @@ label {
 }
 
 input, #platform, #digplatform, #completion, #phydig {
+    /*definerer formularfelterne. Både de almindelige samt dropdown felterne*/
     border-radius: 20px;
     margin-bottom: 1.3em;
     margin-top: 0.2em;
@@ -46,12 +51,14 @@ input, #platform, #digplatform, #completion, #phydig {
 }
 
 fieldset {
+    /*definerer den boks der indeholder formularfelter*/
     background-color: #708DA3;
     border-radius: 30px;
     border: solid;
 }
 
 button {
+    /*definerer submit-knappen*/
     margin-top: 25px;
     border-radius: 20px;
     font-size: 0.6em;
@@ -60,13 +67,14 @@ button {
 }
     
 h1 {
+    /*definerer overskriften*/
     text-align: center;
     font-style: italic;
     font-size: 2.8em;
     color: #00a2e8;
 }
 
-@media screen and (min-width: 480px) {
+@media screen and (min-width: 480px) { /*angiver et breakpoint der bruges til tablet og computer størrelse*/
 h1 {
     text-align: center;
     font-style: italic;
