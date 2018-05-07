@@ -1,7 +1,5 @@
 <?php
-include("db.php");
-
-//echo "Der er hul igennem til behandl_observation.php";
+include("db.php"); //db.php forbinder til databasen
 
 $title = $_POST['title'];
 $phydig = $_POST['phydig'];
@@ -13,20 +11,11 @@ $developer = $_POST['developer'];
 $publisher = $_POST['publisher'];
 $platform = $_POST['platform'];
 $digplatform = $_POST['digplatform'];
+//Variabler
 
+$sql = "INSERT INTO gameparade (title, phydig, reldate, completion, comdate, genre, developer, publisher, platform, digplatform) VALUES ('".$title."', '".$phydig."', '".$reldate."', '".$completion."', '".$comdate."', '".$genre."', '".$developer."', '".$publisher."', '".$platform."', '".$digplatform."')"; //Værdier indsættes til gameparade-tabellens
 
-$sql = "INSERT INTO gameparade (title, phydig, reldate, completion, comdate, genre, developer, publisher, platform, digplatform) VALUES ('".$title."', '".$phydig."', '".$reldate."', '".$completion."', '".$comdate."', '".$genre."', '".$developer."', '".$publisher."', '".$platform."', '".$digplatform."')";
-//$sql = "INSERT INTO planteobservationer (obstype, obstekst, obstid) VALUES ('".$obstype."', '".$obstekst."', NOW())"; //nu med tid
-
-//echo("SQL: " . $sql);
-
-if ($conn->query($sql) === TRUE) {
-   // echo "Gemt i databasen<br>";
-} else {
-    echo "Error: " . $sql . "<br>" . $conn->error . "<br>";
-}
-
-$conn->close(); //vi lukker forbindelsen til databasen igen
+$conn->close(); //Forbindelsen til databasen lukkes
     header('Location: GameParade.php');
 ?>
 
